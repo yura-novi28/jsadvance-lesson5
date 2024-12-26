@@ -1,0 +1,10 @@
+<div class="bad-words">
+    <p class="bad-words__title">Bad words: <span class="bad-words__span">{{ arrBadWords.join(' ') }}</span></p>
+    <form class="bad-form">
+        <input [ngStyle]="{border: checkBooleanInput ? '1px solid red' : '1px solid darkgray'}" name="inputBad" [(ngModel)]="inputValue" type="text" class="bad-form__txt" [placeholder]="inputPlace">
+        <button (click)="buttonAdd()" type="button" class="bad-form__btn">Add</button>
+        <button (click)="resetButton()" type="button" class="bad-form__btn bad-form__btn--red">Reset</button>
+        <textarea [ngStyle]="{border: checkBooleanArea ? '1px solid red' : '1px solid darkgray'}" name="textarea" [(ngModel)]="areaValue" class="bad-form__area" [placeholder]="areaPlace"></textarea>
+        <button (click)="buttonCenzor()" type="button" class="bad-form__btn bad-form__btn--big">Cenzor</button>
+    </form>
+</div>

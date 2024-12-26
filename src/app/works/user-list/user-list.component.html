@@ -1,0 +1,30 @@
+<div class="container-user">
+    <div class="box-left">
+        <p class="box-left__txt">Login</p>
+        <input [ngStyle]="{border: loginValue.trim() === '' && loginValueCheck ? '1px solid red': '1px solid darkgray'}" [(ngModel)]="loginValue" name="login" type="text" class="box-left__input" placeholder="Enter login">
+        <p class="box-left__txt">Password</p>
+        <input [ngStyle]="{border: passwordValue.trim() === '' && passwordValueCheck ? '1px solid red': '1px solid darkgray'}" [(ngModel)]="passwordValue" name="password" type="text" class="box-left__input" placeholder="Enter password">
+        <p class="box-left__txt">Email</p>
+        <input [ngStyle]="{border: emailValue.trim() === '' && emailValueCheck ? '1px solid red': '1px solid darkgray'}" [(ngModel)]="emailValue" name="email" type="text" class="box-left__input" placeholder="Enter email">
+        <button *ngIf="!checkButtonEdit" (click)="addUser()" type="button" class="box-left__btn">Add user</button>
+        <button *ngIf="checkButtonEdit" (click)="editUserSave()" type="button" class="box-left__btn box-left__btn--edit">Save edit user</button>
+    </div>
+    <div class="box-rigth">
+        <div class="box-rigth__header">
+            <p class="box-rigth__header-txt">#</p>
+            <p class="box-rigth__header-txt">Login</p>
+            <p class="box-rigth__header-txt">Password</p>
+            <p class="box-rigth__header-txt">Email</p>
+            <p class="box-rigth__header-txt">Edit</p>
+            <p class="box-rigth__header-txt">Delete</p>
+        </div>
+        <div *ngFor="let item of arrUsers;index as i" class="box-rigth__footer">
+            <p class="box-rigth__footer-txt">{{ i + 1 }}</p>
+            <p class="box-rigth__footer-txt">{{ item.login }}</p>
+            <p class="box-rigth__footer-txt">{{ item.password }}</p>
+            <p class="box-rigth__footer-txt">{{ item.email }}</p>
+            <button (click)="editUser(i)" type="button" class="box-rigth__footer-btn">Edit</button>
+            <button [disabled]="checkButtonDelete" (click)="deleteUser(i)" type="button" class="box-rigth__footer-btn box-rigth__footer-btn--red">Delete</button>
+        </div>
+    </div>
+</div>

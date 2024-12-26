@@ -1,0 +1,24 @@
+<header class="header-child">
+    <p class="header-child__txt">#</p>
+    <p class="header-child__txt">Task</p>
+    <p class="header-child__txt">Check</p>
+    <p class="header-child__txt">DONE/IN PROGRESS</p>
+    <p class="header-child__txt">Edit</p>
+    <p class="header-child__txt">DELETE</p>
+</header>
+<div *ngFor="let item of arrTasks;index as i" class="footer-child">
+    <p class="footer-child__txt">{{ i + 1 }}</p>
+    <p class="footer-child__txt">{{ item.text }}</p>
+    <input [disabled]="editCheck" [(ngModel)]="item.done" type="checkbox" name="progress" class="footer-child__checkbox">
+    <p [ngStyle]="{'color': item.done ? 'green': 'red'}" [textContent]="item.done ? 'Done': 'In Progress'" class="footer-child__txt"></p>
+    <button (click)="editTask(i)" class="footer-child__btn" type="button">Edit</button>
+    <button (click)="deleteTask(i)" [disabled]="!item.done" class="footer-child__btn footer-child__btn--red" type="button">Delete</button>
+</div>
+<div *ngIf="editCheck" class="edit-modal">
+    <p class=""></p>
+    <p class=""></p>
+    <p class=""></p>
+    <input [(ngModel)]="inputEdit" class="edit-modal__input" type="text" name="editInput">
+    <button (click)="editTaskSave()" class="edit-modal__btn" type="button">save</button>
+    <p class=""></p>
+</div>

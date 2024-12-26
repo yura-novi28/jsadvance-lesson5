@@ -1,0 +1,80 @@
+.bad-words{
+    width: 50%;
+    min-height: 300px;
+    background-color: #f7faf9;
+    border-radius: 5px;
+    margin: 5% auto;
+    padding: 10px;
+    &__title{
+        color: black;
+        font-size: 1.3em;
+        font-weight: 700;
+    }
+    &__span{
+        color: red;
+    }
+}
+
+.bad-form{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__txt{
+        width: 84%;
+        height: 40px;
+        outline: 0;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        padding-left: 5px;
+        &:focus{
+            border: 1px solid rgb(104, 181, 244);
+            outline: 2px solid rgba(104, 181, 244, 0.386);
+        }
+    }
+    &__btn{
+        width: 7%;
+        height: 40px;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+        color: #000;
+        background-color: #fec208;
+        &:hover{
+            background-color: #e7ae04;
+        }
+    }
+    &__btn--red{
+        color: #fff;
+        background-color: #db3544;
+        &:hover{
+            background-color: #be2b37;
+        }
+    }
+    &__area{
+        width: 100%;
+        height: 150px;
+        resize: none;
+        outline: 0;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        padding-left: 5px;
+        margin-top: 10px;
+        &:focus{
+            border: 1px solid rgb(104, 181, 244);
+            outline: 2px solid rgba(104, 181, 244, 0.386);
+        }
+    }
+    &__btn--big{
+        width: 100%;
+        background-color: #27a743;
+        color: #fff;
+        margin-top: 10px;
+        &:hover{
+            background-color: #279d41;
+        }
+    }
+    
+}

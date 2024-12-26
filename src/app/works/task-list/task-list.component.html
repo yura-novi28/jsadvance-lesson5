@@ -1,0 +1,11 @@
+<div class="container-task">
+    <header class="header-task">
+        <p class="header-task__title">Plan your day!</p>
+        <p class="header-task__text">User: Ivan Ivanov. Count of task {{ arrTasks.length }}</p>
+    </header>
+    <form class="form-task">
+        <input name="input" [(ngModel)]="valueInput" type="text" class="form-task__input">
+        <button (click)="addButton()" class="form-task__button">Add</button>
+    </form>
+    <app-child [arrTasks]="arrTasks"></app-child>
+</div>
